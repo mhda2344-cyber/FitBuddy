@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitBuddy - Fitness Plan</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <h1>FitBuddy</h1>
+
+        {% if updated %}
+            <h2>Updated 7-Day Workout Plan</h2>
+
+            <div class="tip-box">
+                <p>
+                    {{ message or "Your fitness plan has been updated successfully." }}
+                </p>
+            </div>
+        {% else %}
+            <h2>7-Day Workout Plan</h2>
+        {% endif %}
+
+        <h3>Workout Plan</h3>
+
+        <div class="plan-box">
+            <pre>{{ workout_plan }}</pre>
+        </div>
+
+        <h3>Nutrition & Recovery Tip</h3>
+
+        <div class="tip-box">
+            <p>{{ nutrition_tip }}</p>
+        </div>
+
+        <h3>Give Feedback</h3>
+
+        <form action="/submit-feedback" method="post">
+
+            <input
+                type="hidden"
+                name="user_id"
+                value="{{ user.user_id }}"
+            >
+
+            <textarea
+                name="feedback"
+                rows="5"
+                placeholder="Enter your feedback..."
+                required
+            ></textarea>
+
+            <button type="submit">
+                Update My Plan
+            </button>
+
+        </form>
+
+        <br>
+
+        <a href="/">Create Another Plan</a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

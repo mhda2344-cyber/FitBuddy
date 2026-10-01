@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FitBuddy - All Users</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <h1>FitBuddy</h1>
+
+        <h2>All Registered Users</h2>
+
+        {% if users %}
+
+        <div style="overflow-x: auto;">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>User ID</th>
+                        <th>Age</th>
+                        <th>Weight (kg)</th>
+                        <th>Goal</th>
+                        <th>Intensity</th>
+                        <th>Original Plan</th>
+                        <th>Updated Plan</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    {% for item in users %}
+
+                    <tr>
+
+                        <td>
+                            {{ item.user.username }}
+                        </td>
+
+                        <td>
+                            {{ item.user.user_id }}
+                        </td>
+
+                        <td>
+                            {{ item.user.age }}
+                        </td>
+
+                        <td>
+                            {{ item.user.weight }}
+                        </td>
+
+                        <td>
+                            {{ item.user.goal }}
+                        </td>
+
+                        <td>
+                            {{ item.user.intensity }}
+                        </td>
+
+                        <td>
+                            {% if item.plan %}
+                                <pre style="white-space: pre-wrap;">{{ item.plan.workout_plan }}</pre>
+                            {% else %}
+                                No plan
+                            {% endif %}
+                        </td>
+
+                        <td>
+                            {% if item.plan and item.plan.updated_plan %}
+                                <pre style="white-space: pre-wrap;">{{ item.plan.updated_plan }}</pre>
+                            {% else %}
+                                Not updated
+                            {% endif %}
+                        </td>
+
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+        {% else %}
+
+        <div class="tip-box">
+            <p>No users found.</p>
+        </div>
+
+        {% endif %}
+
+        <br>
+
+        <a href="/">← Back to FitBuddy</a>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

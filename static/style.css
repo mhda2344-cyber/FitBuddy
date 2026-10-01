@@ -1,0 +1,335 @@
+/* =========================================================
+   FitBuddy - Clean Fitness UI
+   ========================================================= */
+
+/* ---------- Global ---------- */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fb;
+    color: #1f2937;
+    line-height: 1.6;
+}
+
+
+/* ---------- Main Container ---------- */
+
+.container {
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+
+/* ---------- Card ---------- */
+
+.card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 35px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ---------- Headings ---------- */
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    text-align: center;
+    font-size: 38px;
+    font-weight: 700;
+    color: #16a34a;
+}
+
+h2 {
+    margin-top: 5px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 25px;
+    color: #374151;
+}
+
+h3 {
+    margin-top: 28px;
+    margin-bottom: 12px;
+    font-size: 20px;
+    color: #166534;
+}
+
+
+/* ---------- Form Labels ---------- */
+
+label {
+    display: block;
+    margin-top: 16px;
+    margin-bottom: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #374151;
+}
+
+
+/* ---------- Text Inputs ---------- */
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+textarea,
+select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    background: #ffffff;
+    color: #1f2937;
+    font-size: 15px;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #22c55e;
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.15);
+}
+
+
+/* ---------- Radio Buttons ---------- */
+
+input[type="radio"] {
+    margin-right: 6px;
+    accent-color: #16a34a;
+}
+
+.radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.radio-group label {
+    margin: 0;
+    padding: 10px 15px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    background: #f9fafb;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.2s ease;
+}
+
+.radio-group label:hover {
+    border-color: #22c55e;
+    background: #f0fdf4;
+}
+
+
+/* ---------- Buttons ---------- */
+
+button {
+    width: 100%;
+    margin-top: 25px;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 10px;
+    background: #16a34a;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+button:hover {
+    background: #15803d;
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+
+/* ---------- Workout Plan ---------- */
+
+.plan-box {
+    margin-top: 10px;
+    padding: 20px;
+    border-left: 5px solid #16a34a;
+    border-radius: 10px;
+    background: #f0fdf4;
+    overflow-x: auto;
+}
+
+.plan-box pre {
+    margin: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: #374151;
+    line-height: 1.7;
+}
+
+
+/* ---------- Nutrition Tip ---------- */
+
+.tip-box {
+    margin-top: 10px;
+    padding: 18px 20px;
+    border-left: 5px solid #f59e0b;
+    border-radius: 10px;
+    background: #fffbeb;
+}
+
+.tip-box p {
+    margin: 0;
+    color: #4b5563;
+}
+
+
+/* ---------- Textarea ---------- */
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+
+/* ---------- Links ---------- */
+
+a {
+    color: #16a34a;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #15803d;
+    text-decoration: underline;
+}
+
+
+/* ---------- Error Message ---------- */
+
+.error {
+    margin: 15px 0;
+    padding: 14px;
+    border-left: 5px solid #dc2626;
+    border-radius: 8px;
+    background: #fef2f2;
+    color: #991b1b;
+    font-weight: 600;
+}
+
+
+/* ---------- Success Message ---------- */
+
+.success {
+    margin: 15px 0;
+    padding: 14px;
+    border-left: 5px solid #16a34a;
+    border-radius: 8px;
+    background: #f0fdf4;
+    color: #166534;
+    font-weight: 600;
+}
+
+
+/* ---------- User Table ---------- */
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    background: white;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+th {
+    padding: 13px;
+    background: #166534;
+    color: white;
+    text-align: left;
+    font-size: 14px;
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 14px;
+}
+
+tr:hover td {
+    background: #f0fdf4;
+}
+
+
+/* ---------- Responsive Design ---------- */
+
+@media (max-width: 700px) {
+
+    .container {
+        padding: 20px 12px;
+    }
+
+    .card {
+        padding: 22px;
+        border-radius: 14px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 21px;
+    }
+
+    .radio-group {
+        flex-direction: column;
+    }
+
+    .radio-group label {
+        width: 100%;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+
+/* ---------- Small Screens ---------- */
+
+@media (max-width: 400px) {
+
+    .card {
+        padding: 18px;
+    }
+
+    h1 {
+        font-size: 27px;
+    }
+
+    h2 {
+        font-size: 19px;
+    }
+
+    button {
+        font-size: 15px;
+    }
+}
